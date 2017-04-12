@@ -12,10 +12,12 @@ struct Restaurant {
     let name: String!
     let location: String!
     let type: String!
+    var isVisited: Bool!
 
-    init(dict: Dictionary<String, String>) {
-        name = dict["name"]
-        location = dict["location"]
-        type = dict["type"]
+    init(dict: Dictionary<String, AnyObject>) {
+        name = dict["name"] as! String
+        location = dict["location"] as! String
+        type = dict["type"] as! String
+        isVisited = dict["isVisited"] as! Bool
     }
 }

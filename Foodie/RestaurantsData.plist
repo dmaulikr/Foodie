@@ -9,6 +9,8 @@
 		<string>Hong Kong</string>
 		<key>type</key>
 		<string>Coffee and Tea Shop</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -17,6 +19,8 @@
 		<string>Hong Kong</string>
 		<key>type</key>
 		<string>Cafe</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -25,6 +29,8 @@
 		<string>Hong Kong</string>
 		<key>type</key>
 		<string>Tea House</string>
+		<key>isVisited</key>
+		<true/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -33,6 +39,8 @@
 		<string>Hong Kong</string>
 		<key>type</key>
 		<string>Casual Drink</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -41,6 +49,8 @@
 		<string>Hong Kong</string>
 		<key>type</key>
 		<string>French</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -49,14 +59,18 @@
 		<string>Hong Kong</string>
 		<key>type</key>
 		<string>Bakery</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Po's Atelier</string>
+		<string>Po&apos;s Atelier</string>
 		<key>location</key>
 		<string>Hong Kong</string>
 		<key>type</key>
 		<string>Cafe</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -65,14 +79,18 @@
 		<string>Sydney</string>
 		<key>type</key>
 		<string>Bakery</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Haigh's Chocolate</string>
+		<string>Haigh&apos;s Chocolate</string>
 		<key>location</key>
 		<string>Sydney</string>
 		<key>type</key>
 		<string>Chocolate</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -81,6 +99,8 @@
 		<string>Sydney</string>
 		<key>type</key>
 		<string>Cafe</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -89,6 +109,8 @@
 		<string>New York</string>
 		<key>type</key>
 		<string>American / Seafood</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -97,6 +119,8 @@
 		<string>New York</string>
 		<key>type</key>
 		<string>American</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -105,6 +129,8 @@
 		<string>New York</string>
 		<key>type</key>
 		<string>Breakfast and Brunch</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -113,6 +139,8 @@
 		<string>New York</string>
 		<key>type</key>
 		<string>Coffee and Tea</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -121,6 +149,8 @@
 		<string>New York</string>
 		<key>type</key>
 		<string>Coffee</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -129,6 +159,8 @@
 		<string>New York</string>
 		<key>type</key>
 		<string>Latin American</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -137,6 +169,8 @@
 		<string>New York</string>
 		<key>type</key>
 		<string>Spanish</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -145,6 +179,8 @@
 		<string>London</string>
 		<key>type</key>
 		<string>Spanish</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -153,6 +189,8 @@
 		<string>London</string>
 		<key>type</key>
 		<string>Spanish</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -161,6 +199,8 @@
 		<string>London</string>
 		<key>type</key>
 		<string>British</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -169,6 +209,8 @@
 		<string>London</string>
 		<key>type</key>
 		<string>Thai</string>
+		<key>isVisited</key>
+		<false/>
 	</dict>
 </array>
 </plist>
