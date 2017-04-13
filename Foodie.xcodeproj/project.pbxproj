@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA68590C1E9FCC2200F8C56C /* RestaurantDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68590B1E9FCC2200F8C56C /* RestaurantDetailVC.swift */; };
+		BA68590E1E9FD17F00F8C56C /* RestaurantDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68590D1E9FD17F00F8C56C /* RestaurantDetailCell.swift */; };
 		BAEFFF411E9E83B900B3A4EF /* RestaurantTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFF401E9E83B900B3A4EF /* RestaurantTableVC.swift */; };
 		BAEFFF431E9EA28500B3A4EF /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFF421E9EA28500B3A4EF /* RestaurantCell.swift */; };
 		BAEFFF451E9EA4C400B3A4EF /* RestaurantsData.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAEFFF441E9EA4C400B3A4EF /* RestaurantsData.plist */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA68590B1E9FCC2200F8C56C /* RestaurantDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailVC.swift; sourceTree = "<group>"; };
+		BA68590D1E9FD17F00F8C56C /* RestaurantDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailCell.swift; sourceTree = "<group>"; };
 		BAEFFF401E9E83B900B3A4EF /* RestaurantTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableVC.swift; sourceTree = "<group>"; };
 		BAEFFF421E9EA28500B3A4EF /* RestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		BAEFFF441E9EA4C400B3A4EF /* RestaurantsData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RestaurantsData.plist; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 			children = (
 				BAFC0E601E9E8245000E5E0C /* AppDelegate.swift */,
 				BAEFFF401E9E83B900B3A4EF /* RestaurantTableVC.swift */,
+				BA68590B1E9FCC2200F8C56C /* RestaurantDetailVC.swift */,
 				BAEFFF481E9EA71C00B3A4EF /* Models */,
 				BAFC0E751E9E831A000E5E0C /* Views */,
 				BAFC0E671E9E8245000E5E0C /* Assets.xcassets */,
@@ -85,6 +90,7 @@
 				BAFC0E641E9E8245000E5E0C /* Main.storyboard */,
 				BAFC0E691E9E8245000E5E0C /* LaunchScreen.storyboard */,
 				BAEFFF421E9EA28500B3A4EF /* RestaurantCell.swift */,
+				BA68590D1E9FD17F00F8C56C /* RestaurantDetailCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -182,8 +188,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAEFFF471E9EA71900B3A4EF /* Restaurant.swift in Sources */,
+				BA68590E1E9FD17F00F8C56C /* RestaurantDetailCell.swift in Sources */,
 				BAEFFF431E9EA28500B3A4EF /* RestaurantCell.swift in Sources */,
 				BAEFFF411E9E83B900B3A4EF /* RestaurantTableVC.swift in Sources */,
+				BA68590C1E9FCC2200F8C56C /* RestaurantDetailVC.swift in Sources */,
 				BAFC0E611E9E8245000E5E0C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
