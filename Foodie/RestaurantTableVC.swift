@@ -76,33 +76,34 @@ class RestaurantTableVC: UITableViewController {
         present(optMenu, animated: true, completion: nil)
         tableView.deselectRow(at: indexPath, animated: false)
     }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            restaurants.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+
+        // Social Sharing Button
+        let shareAct = UITableViewRowAction(style: .normal, title: "Share", handler: { [weak self] act, indexPath in
+            guard self != nil else { return }
+            let defaultText = "Just checking in at " + self!.restaurants[indexPath.row].name
+            if let imageToShare = UIImage(named: self!.restaurants[indexPath.row].name) {
+                let actController = UIActivityViewController(activityItems: [defaultText, imageToShare],
+                                                             applicationActivities: nil)
+                self!.present(actController, animated: true, completion: nil)
+            }
+        })
+        shareAct.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 227.0/255.0, alpha: 1.0)
+
+        // Delete Button
+        let deleteAct = UITableViewRowAction(style: .destructive, title: "Delete", handler: {[weak self] act, indexPath in
+            self?.restaurants.remove(at: indexPath.row)
+            self?.tableView.deleteRows(at: [indexPath], with: .fade)
+        })
+
+        return [shareAct, deleteAct]
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
