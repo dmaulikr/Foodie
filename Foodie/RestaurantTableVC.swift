@@ -16,6 +16,10 @@ class RestaurantTableVC: UITableViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Foodie"
+        tableView.estimatedRowHeight = 80.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         loadData()
     }
 
@@ -25,6 +29,15 @@ class RestaurantTableVC: UITableViewController {
         guard let arr = NSArray(contentsOfFile: path) as? [[String: AnyObject]] else { return }
         for item in arr {
             restaurants.append(Restaurant(dict: item))
+        }
+    }
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        if segue.identifier == "showRestaurantDetail" {
+            let vc = segue.destination as! RestaurantDetailVC
+            vc.currentRestaurant = restaurants[indexPath.row]
         }
     }
 
@@ -43,38 +56,6 @@ class RestaurantTableVC: UITableViewController {
         cell.thumbnailImageView.image = UIImage(named: item.name)
         cell.accessoryType = item.isVisited ? .checkmark : .none
         return cell
-    }
-
-    // Handles table cell selection
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var elItem = restaurants[indexPath.row]
-        let optMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        optMenu.addAction(cancelAction)
-
-        let titleStr = "Call 123-0000-\(indexPath.row)"
-        let callAct = UIAlertAction(title: titleStr, style: .default, handler: { [weak self] action -> Void in
-            let msg = "Sorry, the call feature is not available yet."
-            let alertMsg = UIAlertController(title: "Service Unavailable", message: msg, preferredStyle: .alert)
-            let okAct = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertMsg.addAction(okAct)
-            self?.present(alertMsg, animated: true, completion: nil)
-        })
-        optMenu.addAction(callAct)
-
-        var checkTitle = "Check In"
-        if elItem.isVisited { checkTitle = "Undo Check In" }
-        let checkAct = UIAlertAction(title: checkTitle, style: .default, handler: { [weak self] action -> Void in
-            elItem.isVisited = !elItem.isVisited
-            self?.restaurants[indexPath.row] = elItem
-            tableView.reloadRows(at: [indexPath], with: .top)
-        })
-        optMenu.addAction(checkAct)
-
-        // Show the menu
-        present(optMenu, animated: true, completion: nil)
-        tableView.deselectRow(at: indexPath, animated: false)
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
