@@ -13,6 +13,7 @@ struct Restaurant {
     let location: String!
     let type: String!
     let phone: String!
+    var rating: String!
     var isVisited: Bool!
 
     init(dict: Dictionary<String, AnyObject>) {
@@ -21,5 +22,6 @@ struct Restaurant {
         type = dict["type"] as! String
         phone = dict["phone"] as! String
         isVisited = dict["isVisited"] as! Bool
+        rating = ""
     }
 }
