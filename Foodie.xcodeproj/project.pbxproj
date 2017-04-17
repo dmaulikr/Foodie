@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA13776E1EA5757100E3E2CF /* RestaurantReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA13776D1EA5757100E3E2CF /* RestaurantReviewVC.swift */; };
+		BA1377701EA5797700E3E2CF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA13776F1EA5797700E3E2CF /* Extensions.swift */; };
 		BA68590C1E9FCC2200F8C56C /* RestaurantDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68590B1E9FCC2200F8C56C /* RestaurantDetailVC.swift */; };
 		BA68590E1E9FD17F00F8C56C /* RestaurantDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68590D1E9FD17F00F8C56C /* RestaurantDetailCell.swift */; };
 		BAEFFF411E9E83B900B3A4EF /* RestaurantTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFF401E9E83B900B3A4EF /* RestaurantTableVC.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA13776D1EA5757100E3E2CF /* RestaurantReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantReviewVC.swift; sourceTree = "<group>"; };
+		BA13776F1EA5797700E3E2CF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BA68590B1E9FCC2200F8C56C /* RestaurantDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailVC.swift; sourceTree = "<group>"; };
 		BA68590D1E9FD17F00F8C56C /* RestaurantDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailCell.swift; sourceTree = "<group>"; };
 		BAEFFF401E9E83B900B3A4EF /* RestaurantTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableVC.swift; sourceTree = "<group>"; };
@@ -73,8 +77,10 @@
 			isa = PBXGroup;
 			children = (
 				BAFC0E601E9E8245000E5E0C /* AppDelegate.swift */,
+				BA13776F1EA5797700E3E2CF /* Extensions.swift */,
 				BAEFFF401E9E83B900B3A4EF /* RestaurantTableVC.swift */,
 				BA68590B1E9FCC2200F8C56C /* RestaurantDetailVC.swift */,
+				BA13776D1EA5757100E3E2CF /* RestaurantReviewVC.swift */,
 				BAEFFF481E9EA71C00B3A4EF /* Models */,
 				BAFC0E751E9E831A000E5E0C /* Views */,
 				BAFC0E671E9E8245000E5E0C /* Assets.xcassets */,
@@ -190,8 +196,10 @@
 				BAEFFF471E9EA71900B3A4EF /* Restaurant.swift in Sources */,
 				BA68590E1E9FD17F00F8C56C /* RestaurantDetailCell.swift in Sources */,
 				BAEFFF431E9EA28500B3A4EF /* RestaurantCell.swift in Sources */,
+				BA1377701EA5797700E3E2CF /* Extensions.swift in Sources */,
 				BAEFFF411E9E83B900B3A4EF /* RestaurantTableVC.swift in Sources */,
 				BA68590C1E9FCC2200F8C56C /* RestaurantDetailVC.swift in Sources */,
+				BA13776E1EA5757100E3E2CF /* RestaurantReviewVC.swift in Sources */,
 				BAFC0E611E9E8245000E5E0C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
