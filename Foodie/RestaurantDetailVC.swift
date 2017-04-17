@@ -28,6 +28,32 @@ class RestaurantDetailVC: UIViewController {
         tableView.separatorColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.8)
         tableView.tableFooterView = UIView(frame: .zero)
     }
+
+    // MARK: - Actions
+    @IBAction func close(segue: UIStoryboardSegue) {
+        // Aveda
+    }
+
+    @IBAction func ratingButtonTapped(segue: UIStoryboardSegue) {
+        if let rating = segue.identifier {
+            currentRestaurant.isVisited = true
+            switch rating {
+                case "great": currentRestaurant.rating = "Absolutely love it! Must try"
+                case "good": currentRestaurant.rating = "Good"
+                case "dislike": currentRestaurant.rating = "I don't like it"
+                default: break
+            }
+            tableView.reloadData()
+        }
+    }
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showReview" {
+            let vc = segue.destination as! RestaurantReviewVC
+            vc.restImage = imageView.image
+        }
+    }
 }
 
 // MARK: - Table View Methods
@@ -55,7 +81,7 @@ extension RestaurantDetailVC: UITableViewDelegate, UITableViewDataSource {
             cell.valueLabel.text = currentRestaurant.phone
         case 4:
             cell.fieldLabel.text = "Been Here:"
-            if currentRestaurant.isVisited { cell.valueLabel.text = "I've been here" }
+            if currentRestaurant.isVisited { cell.valueLabel.text = currentRestaurant.rating }
             else { cell.valueLabel.text = "No" }
         default:
             cell.fieldLabel.text = ""
