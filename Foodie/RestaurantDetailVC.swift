@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class RestaurantDetailVC: UIViewController {
 
@@ -16,6 +17,7 @@ class RestaurantDetailVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var mapView: MKMapView!
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -26,7 +28,8 @@ class RestaurantDetailVC: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.2)
         tableView.separatorColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.8)
-        tableView.tableFooterView = UIView(frame: .zero)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        setupMapFooter()
     }
 
     // MARK: - Actions
@@ -47,11 +50,42 @@ class RestaurantDetailVC: UIViewController {
         }
     }
 
+    @objc private func showMap() {
+        performSegue(withIdentifier: "showMap", sender: nil)
+    }
+
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showReview" {
             let vc = segue.destination as! RestaurantReviewVC
             vc.restImage = imageView.image
+        } else if segue.identifier == "showMap" {
+            let vc = segue.destination as! MapVC
+            vc.currentRestaurant = currentRestaurant
+        }
+    }
+
+    // MARK: - Private Methods
+    private func setupMapFooter() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showMap))
+        mapView.addGestureRecognizer(tapRecognizer)
+
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(currentRestaurant.location) { [weak self] marks, error in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            if let placemarks = marks {
+                let pmark = placemarks[0]
+                let annotation = MKPointAnnotation()
+                if let location = pmark.location {
+                    annotation.coordinate = location.coordinate
+                    self?.mapView.addAnnotation(annotation)
+                    let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 250, 250)
+                    self?.mapView.setRegion(region, animated: false)
+                }
+            }
         }
     }
 }

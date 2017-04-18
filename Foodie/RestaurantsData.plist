@@ -8,7 +8,7 @@
 		<key>type</key>
 		<string>Coffee and Tea Shop</string>
 		<key>location</key>
-		<string>G/F, 72 Po Hing Fong, Sheung Wan, Hong Kong</string>
+		<string>72 Po Hing Fong, Sheung Wan, Hong Kong</string>
 		<key>phone</key>
 		<string>232-923423</string>
 		<key>isVisited</key>
@@ -20,7 +20,7 @@
 		<key>type</key>
 		<string>Cafe</string>
 		<key>location</key>
-		<string>Shop B, G/F, 22-24A Tai Ping San Street SOHO, Sheung Wan, Hong Kong</string>
+		<string>72 Po Hing Fong, Sheung Wan, Hong Kong</string>
 		<key>phone</key>
 		<string>348-233423</string>
 		<key>isVisited</key>
@@ -32,7 +32,7 @@
 		<key>type</key>
 		<string>Tea House</string>
 		<key>location</key>
-		<string>Shop B, 18 Tai Ping Shan Road SOHO, Sheung Wan, Hong Kong</string>
+		<string>72 Po Hing Fong, Sheung Wan, Hong Kong</string>
 		<key>phone</key>
 		<string>354-243523</string>
 		<key>isVisited</key>
@@ -44,7 +44,7 @@
 		<key>type</key>
 		<string>Austrian / Causual Drink</string>
 		<key>location</key>
-		<string>Shop B, 20 Tai Ping Shan Road SOHO, Sheung Wan, Hong Kong</string>
+		<string>72 Po Hing Fong, Sheung Wan, Hong Kong</string>
 		<key>phone</key>
 		<string>453-333423</string>
 		<key>isVisited</key>
@@ -56,7 +56,7 @@
 		<key>type</key>
 		<string>French</string>
 		<key>location</key>
-		<string>24 Tai Ping Shan Road SOHO, Sheung Wan, Hong Kong</string>
+		<string>72 Po Hing Fong, Sheung Wan, Hong Kong</string>
 		<key>phone</key>
 		<string>983-284334</string>
 		<key>isVisited</key>
@@ -68,7 +68,7 @@
 		<key>type</key>
 		<string>Bakery Shop</string>
 		<key>location</key>
-		<string>J-K., 200 Hollywood Road, SOHO, Sheung Wan, Hong Kong</string>
+		<string>72 Po Hing Fong, Sheung Wan, Hong Kong</string>
 		<key>phone</key>
 		<string>232-434222</string>
 		<key>isVisited</key>
@@ -76,11 +76,11 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Po's Atelier</string>
+		<string>Po&apos;s Atelier</string>
 		<key>type</key>
 		<string>Bakery</string>
 		<key>location</key>
-		<string>G/F, 62 Po Hing Fong, Sheung Wan, Hong Kong</string>
+		<string>62 Po Hing Fong, Sheung Wan, Hong Kong</string>
 		<key>phone</key>
 		<string>234-834322</string>
 		<key>isVisited</key>
@@ -92,7 +92,7 @@
 		<key>type</key>
 		<string>Chocolate</string>
 		<key>location</key>
-		<string>633 Bourke St Sydney New South Wales 2010 Surry Hills</string>
+		<string>61 York St Sydney New South Wales</string>
 		<key>phone</key>
 		<string>982-434343</string>
 		<key>isVisited</key>
@@ -100,11 +100,11 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Haigh's Chocolate</string>
+		<string>Haigh&apos;s Chocolate</string>
 		<key>type</key>
 		<string>Cafe</string>
 		<key>location</key>
-		<string>412-414 George St Sydney New South Wales</string>
+		<string>412 George St Sydney New South Wales</string>
 		<key>phone</key>
 		<string>734-232323</string>
 		<key>isVisited</key>
@@ -116,7 +116,7 @@
 		<key>type</key>
 		<string>American / Seafood</string>
 		<key>location</key>
-		<string>Shop 1 61 York St Sydney New South Wales</string>
+		<string>61 York St Sydney New South Wales</string>
 		<key>phone</key>
 		<string>872-734343</string>
 		<key>isVisited</key>
