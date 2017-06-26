@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0EAAC31F0164BD001379CE /* NewRestaurantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0EAAC21F0164BD001379CE /* NewRestaurantVC.swift */; };
 		BA13776E1EA5757100E3E2CF /* RestaurantReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA13776D1EA5757100E3E2CF /* RestaurantReviewVC.swift */; };
 		BA1377701EA5797700E3E2CF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA13776F1EA5797700E3E2CF /* Extensions.swift */; };
 		BA68590C1E9FCC2200F8C56C /* RestaurantDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68590B1E9FCC2200F8C56C /* RestaurantDetailVC.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA0EAAC21F0164BD001379CE /* NewRestaurantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRestaurantVC.swift; sourceTree = "<group>"; };
 		BA13776D1EA5757100E3E2CF /* RestaurantReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantReviewVC.swift; sourceTree = "<group>"; };
 		BA13776F1EA5797700E3E2CF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BA68590B1E9FCC2200F8C56C /* RestaurantDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailVC.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				BA68590B1E9FCC2200F8C56C /* RestaurantDetailVC.swift */,
 				BA13776D1EA5757100E3E2CF /* RestaurantReviewVC.swift */,
 				BA74FD9C1EA66A010044BD84 /* MapVC.swift */,
+				BA0EAAC21F0164BD001379CE /* NewRestaurantVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				BA68590E1E9FD17F00F8C56C /* RestaurantDetailCell.swift in Sources */,
 				BAEFFF431E9EA28500B3A4EF /* RestaurantCell.swift in Sources */,
 				BA1377701EA5797700E3E2CF /* Extensions.swift in Sources */,
+				BA0EAAC31F0164BD001379CE /* NewRestaurantVC.swift in Sources */,
 				BAEFFF411E9E83B900B3A4EF /* RestaurantTableVC.swift in Sources */,
 				BA68590C1E9FCC2200F8C56C /* RestaurantDetailVC.swift in Sources */,
 				BA13776E1EA5757100E3E2CF /* RestaurantReviewVC.swift in Sources */,
