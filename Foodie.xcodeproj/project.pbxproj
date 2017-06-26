@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0EAAC31F0164BD001379CE /* NewRestaurantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0EAAC21F0164BD001379CE /* NewRestaurantVC.swift */; };
 		BA13776E1EA5757100E3E2CF /* RestaurantReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA13776D1EA5757100E3E2CF /* RestaurantReviewVC.swift */; };
 		BA1377701EA5797700E3E2CF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA13776F1EA5797700E3E2CF /* Extensions.swift */; };
 		BA68590C1E9FCC2200F8C56C /* RestaurantDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68590B1E9FCC2200F8C56C /* RestaurantDetailVC.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA0EAAC21F0164BD001379CE /* NewRestaurantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRestaurantVC.swift; sourceTree = "<group>"; };
 		BA13776D1EA5757100E3E2CF /* RestaurantReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantReviewVC.swift; sourceTree = "<group>"; };
 		BA13776F1EA5797700E3E2CF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BA68590B1E9FCC2200F8C56C /* RestaurantDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailVC.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				BA68590B1E9FCC2200F8C56C /* RestaurantDetailVC.swift */,
 				BA13776D1EA5757100E3E2CF /* RestaurantReviewVC.swift */,
 				BA74FD9C1EA66A010044BD84 /* MapVC.swift */,
+				BA0EAAC21F0164BD001379CE /* NewRestaurantVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -152,12 +155,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Eduardo Pacheco";
 				TargetAttributes = {
 					BAFC0E5C1E9E8245000E5E0C = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = L3A3BX7PZG;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -225,6 +229,7 @@
 				BA68590E1E9FD17F00F8C56C /* RestaurantDetailCell.swift in Sources */,
 				BAEFFF431E9EA28500B3A4EF /* RestaurantCell.swift in Sources */,
 				BA1377701EA5797700E3E2CF /* Extensions.swift in Sources */,
+				BA0EAAC31F0164BD001379CE /* NewRestaurantVC.swift in Sources */,
 				BAEFFF411E9E83B900B3A4EF /* RestaurantTableVC.swift in Sources */,
 				BA68590C1E9FCC2200F8C56C /* RestaurantDetailVC.swift in Sources */,
 				BA13776E1EA5757100E3E2CF /* RestaurantReviewVC.swift in Sources */,
@@ -265,7 +270,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -273,7 +280,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -315,7 +326,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -323,7 +336,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -354,10 +371,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L3A3BX7PZG;
 				INFOPLIST_FILE = Foodie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eduardo-pacheco.Foodie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -367,10 +386,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L3A3BX7PZG;
 				INFOPLIST_FILE = Foodie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eduardo-pacheco.Foodie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

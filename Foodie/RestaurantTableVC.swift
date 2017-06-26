@@ -16,11 +16,21 @@ class RestaurantTableVC: UITableViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = .white
         title = "Foodie"
         tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableViewAutomaticDimension
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         loadData()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+
+    // MARK: - Actions
+    @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue) {
+        // Banana Banana Banana
     }
 
     // MARK: - Private Methods
