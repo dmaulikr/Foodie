@@ -22,6 +22,7 @@ class RestaurantDetailVC: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = false
         title = currentRestaurant.name
         imageView.image = UIImage(named: currentRestaurant.name)
         tableView.estimatedRowHeight = 36.0
