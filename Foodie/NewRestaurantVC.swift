@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import CoreData
 
 class NewRestaurantVC: UITableViewController {
 
     // MARK: - Properties
     private var isVisited = false
+    private var newRestaurant: RestaurantMO!
 
     // MARK: - Outlets
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var typeTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var yesButton:UIButton!
     @IBOutlet weak var noButton:UIButton!
@@ -29,11 +32,21 @@ class NewRestaurantVC: UITableViewController {
 
     // MARK: - Actions
     @IBAction private func saveButtonPressed() {
-        guard let name = nameTextField.text, let type = typeTextField.text, let loc = locationTextField.text else { return }
+        guard let name = nameTextField.text, let type = typeTextField.text, let phone = phoneTextField.text, let loc = locationTextField.text else { return }
         if validateInputs() {
-            print(name)
-            print(type)
-            print(loc)
+            guard let appDel = UIApplication.shared.delegate as? AppDelegate  else { return }
+            newRestaurant = RestaurantMO(context: appDel.persistentContainer.viewContext)
+            newRestaurant.name = name
+            newRestaurant.type = type
+            newRestaurant.phone = phone
+            newRestaurant.location = loc
+            newRestaurant.isVisited = isVisited
+
+            if let restImg = photoImageView.image {
+                if let imageData = UIImagePNGRepresentation(restImg) { newRestaurant.image = imageData }
+            }
+            appDel.saveContext()
+            dismiss(animated: true, completion: nil)
         }
     }
 
@@ -51,8 +64,8 @@ class NewRestaurantVC: UITableViewController {
 
     // MARK: - Private Methods
     private func validateInputs() -> Bool {
-        guard let name = nameTextField.text, let type = typeTextField.text, let loc = locationTextField.text else { return false }
-        if name.isEmpty || type.isEmpty || loc.isEmpty {
+        guard let name = nameTextField.text, let type = typeTextField.text, let phone = phoneTextField.text, let loc = locationTextField.text else { return false }
+        if name.isEmpty || type.isEmpty || loc.isEmpty || phone.isEmpty {
             return false
         } else {
             return true

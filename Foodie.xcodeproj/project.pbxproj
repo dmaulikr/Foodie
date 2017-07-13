@@ -14,6 +14,7 @@
 		BA68590E1E9FD17F00F8C56C /* RestaurantDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68590D1E9FD17F00F8C56C /* RestaurantDetailCell.swift */; };
 		BA74FD9A1EA65EB00044BD84 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA74FD991EA65EB00044BD84 /* MapKit.framework */; };
 		BA74FD9D1EA66A010044BD84 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA74FD9C1EA66A010044BD84 /* MapVC.swift */; };
+		BAD344261F17D33C00181844 /* Foodie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAD344241F17D33C00181844 /* Foodie.xcdatamodeld */; };
 		BAEFFF411E9E83B900B3A4EF /* RestaurantTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFF401E9E83B900B3A4EF /* RestaurantTableVC.swift */; };
 		BAEFFF431E9EA28500B3A4EF /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFF421E9EA28500B3A4EF /* RestaurantCell.swift */; };
 		BAEFFF451E9EA4C400B3A4EF /* RestaurantsData.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAEFFF441E9EA4C400B3A4EF /* RestaurantsData.plist */; };
@@ -32,6 +33,7 @@
 		BA68590D1E9FD17F00F8C56C /* RestaurantDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailCell.swift; sourceTree = "<group>"; };
 		BA74FD991EA65EB00044BD84 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BA74FD9C1EA66A010044BD84 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		BAD344251F17D33C00181844 /* Foodie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foodie.xcdatamodel; sourceTree = "<group>"; };
 		BAEFFF401E9E83B900B3A4EF /* RestaurantTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableVC.swift; sourceTree = "<group>"; };
 		BAEFFF421E9EA28500B3A4EF /* RestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		BAEFFF441E9EA4C400B3A4EF /* RestaurantsData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RestaurantsData.plist; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				BAFC0E671E9E8245000E5E0C /* Assets.xcassets */,
 				BAFC0E6C1E9E8245000E5E0C /* Info.plist */,
 				BAEFFF441E9EA4C400B3A4EF /* RestaurantsData.plist */,
+				BAD344241F17D33C00181844 /* Foodie.xcdatamodeld */,
 			);
 			path = Foodie;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD344261F17D33C00181844 /* Foodie.xcdatamodeld in Sources */,
 				BAEFFF471E9EA71900B3A4EF /* Restaurant.swift in Sources */,
 				BA68590E1E9FD17F00F8C56C /* RestaurantDetailCell.swift in Sources */,
 				BAEFFF431E9EA28500B3A4EF /* RestaurantCell.swift in Sources */,
@@ -417,6 +421,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BAD344241F17D33C00181844 /* Foodie.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BAD344251F17D33C00181844 /* Foodie.xcdatamodel */,
+			);
+			currentVersion = BAD344251F17D33C00181844 /* Foodie.xcdatamodel */;
+			path = Foodie.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BAFC0E551E9E8245000E5E0C /* Project object */;
 }
