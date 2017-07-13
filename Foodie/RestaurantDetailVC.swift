@@ -12,7 +12,7 @@ import MapKit
 class RestaurantDetailVC: UIViewController {
 
     // MARK: - Properties
-    internal var currentRestaurant: Restaurant!
+    internal var currentRestaurant: RestaurantMO!
 
     // MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
@@ -24,7 +24,7 @@ class RestaurantDetailVC: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = false
         title = currentRestaurant.name
-        imageView.image = UIImage(named: currentRestaurant.name)
+        imageView.image = UIImage(data: currentRestaurant.image!)
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.2)
@@ -47,6 +47,7 @@ class RestaurantDetailVC: UIViewController {
                 case "dislike": currentRestaurant.rating = "I don't like it"
                 default: break
             }
+            if let appDel = UIApplication.shared.delegate as? AppDelegate { appDel.saveContext() }
             tableView.reloadData()
         }
     }
@@ -72,7 +73,7 @@ class RestaurantDetailVC: UIViewController {
         mapView.addGestureRecognizer(tapRecognizer)
 
         let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(currentRestaurant.location) { [weak self] marks, error in
+        geocoder.geocodeAddressString(currentRestaurant.location!) { [weak self] marks, error in
             if error != nil {
                 print(error!.localizedDescription)
                 return

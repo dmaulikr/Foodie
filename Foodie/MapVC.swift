@@ -12,7 +12,7 @@ import MapKit
 class MapVC: UIViewController {
 
     // MARK: - Properties
-    internal var currentRestaurant: Restaurant!
+    internal var currentRestaurant: RestaurantMO!
 
     // MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
@@ -27,7 +27,7 @@ class MapVC: UIViewController {
     // MARK: - Private Methods
     private func setupMapView() {
         let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(currentRestaurant.location) { [weak self] marks, error in
+        geocoder.geocodeAddressString(currentRestaurant.location!) { [weak self] marks, error in
             if error != nil {
                 print(error!.localizedDescription)
                 return
@@ -63,25 +63,10 @@ extension MapVC: MKMapViewDelegate {
         }
 
         let leftIconView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 53.0, height: 53.0))
-        leftIconView.image = UIImage(named: currentRestaurant.name)
+        leftIconView.image = UIImage(data: currentRestaurant.image!)
         leftIconView.contentMode = .scaleAspectFill
         annotationView?.leftCalloutAccessoryView = leftIconView
         return annotationView
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
