@@ -12,8 +12,10 @@ import CoreData
 class RestaurantTableVC: UITableViewController, NSFetchedResultsControllerDelegate {
 
     // MARK: - Properties
+    private var searchController: UISearchController!
     private var fetchResultController: NSFetchedResultsController<RestaurantMO>!
     private var restaurants: [RestaurantMO] = []
+    private var searchResults: [RestaurantMO] = []
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -23,6 +25,13 @@ class RestaurantTableVC: UITableViewController, NSFetchedResultsControllerDelega
         tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableViewAutomaticDimension
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.tintColor = .white
+        searchController.searchBar.barTintColor = UIColor(red: 218.0/255.0, green: 100.0/255.0, blue: 70.0/255.0, alpha: 1.0)
+        navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
         setupCoreData()
     }
 
@@ -75,13 +84,23 @@ class RestaurantTableVC: UITableViewController, NSFetchedResultsControllerDelega
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 
+    private func filterContent(for searchText: String) {
+        searchResults = restaurants.filter({ restaurant -> Bool in
+            var isMatchName = false
+            var isMatchLoc = false
+            if let name = restaurant.name { isMatchName = name.localizedCaseInsensitiveContains(searchText) }
+            if let loc = restaurant.location { isMatchLoc = loc.localizedCaseInsensitiveContains(searchText) }
+            if isMatchName || isMatchLoc { return true }
+            else { return false }
+        })
+    }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         if segue.identifier == "showRestaurantDetail" {
             let vc = segue.destination as! RestaurantDetailVC
-            vc.currentRestaurant = restaurants[indexPath.row]
+            vc.currentRestaurant = searchController.isActive ? searchResults[indexPath.row] : restaurants[indexPath.row]
         }
     }
 
@@ -92,18 +111,26 @@ class RestaurantTableVC: UITableViewController, NSFetchedResultsControllerDelega
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurants.count
+        if searchController.isActive {
+            return searchResults.count
+        } else {
+            return restaurants.count
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell", for: indexPath) as! RestaurantCell
-        let item = restaurants[indexPath.row]
+        let item = searchController.isActive ? searchResults[indexPath.row] : restaurants[indexPath.row]
         cell.nameLabel.text = item.name
         cell.locationLabel.text = item.location
         cell.typeLabel.text = item.type
         cell.thumbnailImageView.image = UIImage(data: restaurants[indexPath.row].image!)
         cell.accessoryType = item.isVisited ? .checkmark : .none
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return !searchController.isActive
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -157,7 +184,15 @@ class RestaurantTableVC: UITableViewController, NSFetchedResultsControllerDelega
     }
 }
 
-
+// MARK: - Search Controller Delegate Methods
+extension RestaurantTableVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            tableView.reloadData()
+        }
+    }
+}
 
 
 
