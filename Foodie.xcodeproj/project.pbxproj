@@ -10,6 +10,8 @@
 		BA0A18F71F191F480020A18F /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA0A18F61F191F480020A18F /* Walkthrough.storyboard */; };
 		BA0A18F91F192D580020A18F /* WalkthroughContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0A18F81F192D580020A18F /* WalkthroughContentVC.swift */; };
 		BA0A18FC1F192EDC0020A18F /* WalkthroughPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0A18FB1F192EDC0020A18F /* WalkthroughPageVC.swift */; };
+		BA0A18FF1F1946A30020A18F /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA0A18FD1F1946A30020A18F /* About.storyboard */; };
+		BA0A19011F19478D0020A18F /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA0A19001F19478D0020A18F /* Discover.storyboard */; };
 		BA0EAAC31F0164BD001379CE /* NewRestaurantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0EAAC21F0164BD001379CE /* NewRestaurantVC.swift */; };
 		BA13776E1EA5757100E3E2CF /* RestaurantReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA13776D1EA5757100E3E2CF /* RestaurantReviewVC.swift */; };
 		BA1377701EA5797700E3E2CF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA13776F1EA5797700E3E2CF /* Extensions.swift */; };
@@ -32,6 +34,8 @@
 		BA0A18F61F191F480020A18F /* Walkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
 		BA0A18F81F192D580020A18F /* WalkthroughContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentVC.swift; sourceTree = "<group>"; };
 		BA0A18FB1F192EDC0020A18F /* WalkthroughPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageVC.swift; sourceTree = "<group>"; };
+		BA0A18FE1F1946A30020A18F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Foodie/Base.lproj/About.storyboard; sourceTree = "<group>"; };
+		BA0A19001F19478D0020A18F /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Discover.storyboard; path = ../Discover.storyboard; sourceTree = "<group>"; };
 		BA0EAAC21F0164BD001379CE /* NewRestaurantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRestaurantVC.swift; sourceTree = "<group>"; };
 		BA13776D1EA5757100E3E2CF /* RestaurantReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantReviewVC.swift; sourceTree = "<group>"; };
 		BA13776F1EA5797700E3E2CF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				BAFC0E641E9E8245000E5E0C /* Main.storyboard */,
+				BA0A18FD1F1946A30020A18F /* About.storyboard */,
+				BA0A19001F19478D0020A18F /* Discover.storyboard */,
 				BA0A18F61F191F480020A18F /* Walkthrough.storyboard */,
 				BAFC0E691E9E8245000E5E0C /* LaunchScreen.storyboard */,
 				BAEFFF421E9EA28500B3A4EF /* RestaurantCell.swift */,
@@ -216,8 +222,10 @@
 			files = (
 				BAFC0E6B1E9E8245000E5E0C /* LaunchScreen.storyboard in Resources */,
 				BAEFFF451E9EA4C400B3A4EF /* RestaurantsData.plist in Resources */,
+				BA0A18FF1F1946A30020A18F /* About.storyboard in Resources */,
 				BA0A18F71F191F480020A18F /* Walkthrough.storyboard in Resources */,
 				BAFC0E681E9E8245000E5E0C /* Assets.xcassets in Resources */,
+				BA0A19011F19478D0020A18F /* Discover.storyboard in Resources */,
 				BAFC0E661E9E8245000E5E0C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +273,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		BA0A18FD1F1946A30020A18F /* About.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA0A18FE1F1946A30020A18F /* Base */,
+			);
+			name = About.storyboard;
+			sourceTree = "<group>";
+		};
 		BAFC0E641E9E8245000E5E0C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
