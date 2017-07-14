@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Private Methods
     private func setupUI() {
+        // Nav Bars
         UIApplication.shared.statusBarStyle = .default
         UINavigationBar.appearance().barTintColor = UIColor(red: 216/255, green: 74/255, blue: 32/255, alpha: 1.0)
         UINavigationBar.appearance().tintColor = .black
@@ -35,6 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NSAttributedStringKey.font.rawValue: barFont
             ]
         }
+
+        // Tab Bar
+        UITabBar.appearance().tintColor = UIColor(red: 235.0/255.0, green: 75.0/255.0, blue: 27.0/255.0, alpha: 1.0)
+        UITabBar.appearance().barTintColor = UIColor(red: 236.0/255.0, green: 240.0/255.0, blue: 241.0/255.0, alpha: 1.0)
     }
 
     // MARK: - Core Data stack
