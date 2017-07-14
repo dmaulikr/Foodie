@@ -20,7 +20,6 @@ class RestaurantTableVC: UITableViewController, NSFetchedResultsControllerDelega
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.tintColor = .white
         title = "Foodie"
         tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableViewAutomaticDimension
