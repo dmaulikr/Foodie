@@ -65,6 +65,7 @@ class RestaurantTableVC: UITableViewController, NSFetchedResultsControllerDelega
             print(error.localizedDescription)
         }
     }
+
     private func loadSeedData() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         guard let path = Bundle.main.path(forResource: "RestaurantsData", ofType: "plist") else { return }
@@ -85,14 +86,13 @@ class RestaurantTableVC: UITableViewController, NSFetchedResultsControllerDelega
     }
 
     private func filterContent(for searchText: String) {
-        searchResults = restaurants.filter({ restaurant -> Bool in
+        searchResults = restaurants.filter() { restaurant -> Bool in
             var isMatchName = false
             var isMatchLoc = false
             if let name = restaurant.name { isMatchName = name.localizedCaseInsensitiveContains(searchText) }
             if let loc = restaurant.location { isMatchLoc = loc.localizedCaseInsensitiveContains(searchText) }
-            if isMatchName || isMatchLoc { return true }
-            else { return false }
-        })
+            return (isMatchName || isMatchLoc)
+        }
     }
 
     // MARK: - Navigation
@@ -106,16 +106,8 @@ class RestaurantTableVC: UITableViewController, NSFetchedResultsControllerDelega
 
     // MARK: - Table View Methods  *********************************************************************************
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.isActive {
-            return searchResults.count
-        } else {
-            return restaurants.count
-        }
+        return searchController.isActive ? searchResults.count : restaurants.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -165,6 +157,7 @@ class RestaurantTableVC: UITableViewController, NSFetchedResultsControllerDelega
     }
 
     // MARK: - Core Data Methods  *********************************************************************************
+
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
@@ -193,30 +186,3 @@ extension RestaurantTableVC: UISearchResultsUpdating {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
