@@ -12,6 +12,7 @@
 		BA0A18FC1F192EDC0020A18F /* WalkthroughPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0A18FB1F192EDC0020A18F /* WalkthroughPageVC.swift */; };
 		BA0A18FF1F1946A30020A18F /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA0A18FD1F1946A30020A18F /* About.storyboard */; };
 		BA0A19011F19478D0020A18F /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA0A19001F19478D0020A18F /* Discover.storyboard */; };
+		BA0A19031F194C690020A18F /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0A19021F194C690020A18F /* AboutVC.swift */; };
 		BA0EAAC31F0164BD001379CE /* NewRestaurantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0EAAC21F0164BD001379CE /* NewRestaurantVC.swift */; };
 		BA13776E1EA5757100E3E2CF /* RestaurantReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA13776D1EA5757100E3E2CF /* RestaurantReviewVC.swift */; };
 		BA1377701EA5797700E3E2CF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA13776F1EA5797700E3E2CF /* Extensions.swift */; };
@@ -36,6 +37,7 @@
 		BA0A18FB1F192EDC0020A18F /* WalkthroughPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageVC.swift; sourceTree = "<group>"; };
 		BA0A18FE1F1946A30020A18F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Foodie/Base.lproj/About.storyboard; sourceTree = "<group>"; };
 		BA0A19001F19478D0020A18F /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Discover.storyboard; path = ../Discover.storyboard; sourceTree = "<group>"; };
+		BA0A19021F194C690020A18F /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		BA0EAAC21F0164BD001379CE /* NewRestaurantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRestaurantVC.swift; sourceTree = "<group>"; };
 		BA13776D1EA5757100E3E2CF /* RestaurantReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantReviewVC.swift; sourceTree = "<group>"; };
 		BA13776F1EA5797700E3E2CF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 			path = Walkthrough;
 			sourceTree = "<group>";
 		};
+		BA0A19041F194C6E0020A18F /* About */ = {
+			isa = PBXGroup;
+			children = (
+				BA0A19021F194C690020A18F /* AboutVC.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
 		BA74FD981EA65EB00044BD84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +95,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BA74FD9B1EA669D40044BD84 /* Restaurants */ = {
+		BA74FD9B1EA669D40044BD84 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
 				BAEFFF401E9E83B900B3A4EF /* RestaurantTableVC.swift */,
@@ -94,7 +104,7 @@
 				BA74FD9C1EA66A010044BD84 /* MapVC.swift */,
 				BA0EAAC21F0164BD001379CE /* NewRestaurantVC.swift */,
 			);
-			name = Restaurants;
+			name = Favorites;
 			sourceTree = "<group>";
 		};
 		BAEFFF481E9EA71C00B3A4EF /* Models */ = {
@@ -129,7 +139,8 @@
 				BA13776F1EA5797700E3E2CF /* Extensions.swift */,
 				BAEFFF481E9EA71C00B3A4EF /* Models */,
 				BAFC0E751E9E831A000E5E0C /* Views */,
-				BA74FD9B1EA669D40044BD84 /* Restaurants */,
+				BA74FD9B1EA669D40044BD84 /* Favorites */,
+				BA0A19041F194C6E0020A18F /* About */,
 				BA0A18FA1F192D6B0020A18F /* Walkthrough */,
 				BAFC0E671E9E8245000E5E0C /* Assets.xcassets */,
 				BAFC0E6C1E9E8245000E5E0C /* Info.plist */,
@@ -254,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA0A19031F194C690020A18F /* AboutVC.swift in Sources */,
 				BA0A18FC1F192EDC0020A18F /* WalkthroughPageVC.swift in Sources */,
 				BAD344261F17D33C00181844 /* Foodie.xcdatamodeld in Sources */,
 				BA0A18F91F192D580020A18F /* WalkthroughContentVC.swift in Sources */,
