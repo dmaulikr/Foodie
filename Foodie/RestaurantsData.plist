@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Cafe Deadend</string>
+		<key>type</key>
+		<string>Coffee and Tea Shop</string>
+		<key>location</key>
+		<string>72 Po Hing Fong, Sheung Wan, Hong Kong</string>
+		<key>phone</key>
+		<string>232-923423</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Homei</string>
+		<key>type</key>
+		<string>Cafe</string>
+		<key>location</key>
+		<string>72 Po Hing Fong, Sheung Wan, Hong Kong</string>
+		<key>phone</key>
+		<string>348-233423</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Teakha</string>
+		<key>type</key>
+		<string>Tea House</string>
+		<key>location</key>
+		<string>72 Po Hing Fong, Sheung Wan, Hong Kong</string>
+		<key>phone</key>
+		<string>354-243523</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Cafe Loisl</string>
+		<key>type</key>
+		<string>Austrian / Causual Drink</string>
+		<key>location</key>
+		<string>72 Po Hing Fong, Sheung Wan, Hong Kong</string>
+		<key>phone</key>
+		<string>453-333423</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Petite Oyster</string>
+		<key>type</key>
+		<string>French</string>
+		<key>location</key>
+		<string>72 Po Hing Fong, Sheung Wan, Hong Kong</string>
+		<key>phone</key>
+		<string>983-284334</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>For Kee Restaurant</string>
+		<key>type</key>
+		<string>Bakery Shop</string>
+		<key>location</key>
+		<string>72 Po Hing Fong, Sheung Wan, Hong Kong</string>
+		<key>phone</key>
+		<string>232-434222</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Po&apos;s Atelier</string>
+		<key>type</key>
+		<string>Bakery</string>
+		<key>location</key>
+		<string>62 Po Hing Fong, Sheung Wan, Hong Kong</string>
+		<key>phone</key>
+		<string>234-834322</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Bourke Street Bakery</string>
+		<key>type</key>
+		<string>Chocolate</string>
+		<key>location</key>
+		<string>61 York St Sydney New South Wales</string>
+		<key>phone</key>
+		<string>982-434343</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Haigh&apos;s Chocolate</string>
+		<key>type</key>
+		<string>Cafe</string>
+		<key>location</key>
+		<string>412 George St Sydney New South Wales</string>
+		<key>phone</key>
+		<string>734-232323</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Palomino Espresso</string>
+		<key>type</key>
+		<string>American / Seafood</string>
+		<key>location</key>
+		<string>61 York St Sydney New South Wales</string>
+		<key>phone</key>
+		<string>872-734343</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Upstate</string>
+		<key>type</key>
+		<string>American</string>
+		<key>location</key>
+		<string>95 1st Ave New York, NY 10003</string>
+		<key>phone</key>
+		<string>343-233221</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Traif</string>
+		<key>type</key>
+		<string>American</string>
+		<key>location</key>
+		<string>229 S 4th St Brooklyn, NY 11211</string>
+		<key>phone</key>
+		<string>985-723623</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Graham Avenue Meats</string>
+		<key>type</key>
+		<string>Breakfast and Brunch</string>
+		<key>location</key>
+		<string>445 Graham Ave Brooklyn, NY 11211</string>
+		<key>phone</key>
+		<string>455-232345</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Waffle and Wolf</string>
+		<key>type</key>
+		<string>Coffee and Tea</string>
+		<key>location</key>
+		<string>413 Graham Ave Brooklyn, NY 11211</string>
+		<key>phone</key>
+		<string>434-232322</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Five Leaves</string>
+		<key>type</key>
+		<string>Coffee and Tea</string>
+		<key>location</key>
+		<string>18 Bedford Ave Brooklyn, NY 11222</string>
+		<key>phone</key>
+		<string>343-234553</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Cafe Lore</string>
+		<key>type</key>
+		<string>Latin American</string>
+		<key>location</key>
+		<string>Sunset Park 4601 4th Ave Brooklyn, NY 11220</string>
+		<key>phone</key>
+		<string>342-455433</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Confessional</string>
+		<key>type</key>
+		<string>Spanish</string>
+		<key>location</key>
+		<string>308 E 6th St New York, NY 10003</string>
+		<key>phone</key>
+		<string>643-332323</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Barrafina</string>
+		<key>type</key>
+		<string>Spanish</string>
+		<key>location</key>
+		<string>54 Frith Street London W1D 4SL United Kingdom</string>
+		<key>phone</key>
+		<string>542-343434</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Donostia</string>
+		<key>type</key>
+		<string>Spanish</string>
+		<key>location</key>
+		<string>10 Seymour Place London W1H 7ND United Kingdom</string>
+		<key>phone</key>
+		<string>722-232323</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Royal Oak</string>
+		<key>type</key>
+		<string>British</string>
+		<key>location</key>
+		<string>2 Regency Street London SW1P 4BZ United Kingdom</string>
+		<key>phone</key>
+		<string>343-988834</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>CASK Pub and Kitchen</string>
+		<key>type</key>
+		<string>Thai</string>
+		<key>location</key>
+		<string>22 Charlwood Street London SW1V 2DY Pimlico</string>
+		<key>phone</key>
+		<string>432-344050</string>
+		<key>isVisited</key>
+		<false/>
+	</dict>
+</array>
+</plist>

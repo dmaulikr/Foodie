@@ -7,37 +7,181 @@
 //
 
 import UIKit
+import CoreData
 
-class RestaurantTableVC: UITableViewController {
+class RestaurantTableVC: UITableViewController, NSFetchedResultsControllerDelegate {
 
     // MARK: - Properties
-    fileprivate var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster",
-                                       "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate",
-                                       "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats", "Waffle & Wolf",
-                                       "Five Leaves", "Cafe Lore", "Confessional", "Barrafina", "Donostia", "Royal Oak",
-                                       "CASK Pub and Kitchen"]
-
+    private var searchController: UISearchController!
+    private var fetchResultController: NSFetchedResultsController<RestaurantMO>!
+    private var restaurants: [RestaurantMO] = []
+    private var searchResults: [RestaurantMO] = []
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Foodie"
+        tableView.estimatedRowHeight = 80.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.tintColor = .white
+        searchController.searchBar.barTintColor = UIColor(red: 218.0/255.0, green: 100.0/255.0, blue: 70.0/255.0, alpha: 1.0)
+        navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        setupCoreData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
-    // MARK: - Table view data source *********************************************************************************
+    // MARK: - Actions
+    @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue) {
+        // Banana Banana Banana
+    }
+
+    // MARK: - Private Methods
+    private func setupCoreData() {
+        let fetchRequest: NSFetchRequest<RestaurantMO> = RestaurantMO.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDel.persistentContainer.viewContext
+        fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context,
+                                                           sectionNameKeyPath: nil, cacheName: nil)
+        fetchResultController.delegate = self
+        do {
+            try fetchResultController.performFetch()
+            if let fetchedObjects = fetchResultController.fetchedObjects {
+                restaurants = fetchedObjects
+                if restaurants.count == 0 { loadSeedData() }
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    private func loadSeedData() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        guard let path = Bundle.main.path(forResource: "RestaurantsData", ofType: "plist") else { return }
+        guard let arr = NSArray(contentsOfFile: path) as? [[String: AnyObject]] else { return }
+        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return }
+        for item in arr {
+            let newRest = RestaurantMO(context: appDel.persistentContainer.viewContext)
+            newRest.name = item["name"] as? String
+            newRest.type = item["type"] as? String
+            newRest.location = item["location"] as? String
+            newRest.phone = item["phone"] as? String
+            newRest.isVisited = item["isVisited"] as! Bool
+            newRest.image = UIImagePNGRepresentation(UIImage(named: item["name"] as! String)!)
+            restaurants.append(newRest)
+        }
+        appDel.saveContext()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+
+    private func filterContent(for searchText: String) {
+        searchResults = restaurants.filter() { restaurant -> Bool in
+            var isMatchName = false
+            var isMatchLoc = false
+            if let name = restaurant.name { isMatchName = name.localizedCaseInsensitiveContains(searchText) }
+            if let loc = restaurant.location { isMatchLoc = loc.localizedCaseInsensitiveContains(searchText) }
+            return (isMatchName || isMatchLoc)
+        }
+    }
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        if segue.identifier == "showRestaurantDetail" {
+            let vc = segue.destination as! RestaurantDetailVC
+            vc.currentRestaurant = searchController.isActive ? searchResults[indexPath.row] : restaurants[indexPath.row]
+        }
+    }
+
+    // MARK: - Table View Methods  *********************************************************************************
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurantNames.count
+        return searchController.isActive ? searchResults.count : restaurants.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell", for: indexPath)
-        let name = restaurantNames[indexPath.row]
-        cell.textLabel?.text = name
-        cell.imageView?.image = UIImage(named: name)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell", for: indexPath) as! RestaurantCell
+        let item = searchController.isActive ? searchResults[indexPath.row] : restaurants[indexPath.row]
+        cell.nameLabel.text = item.name
+        cell.locationLabel.text = item.location
+        cell.typeLabel.text = item.type
+        cell.thumbnailImageView.image = UIImage(data: restaurants[indexPath.row].image!)
+        cell.accessoryType = item.isVisited ? .checkmark : .none
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return !searchController.isActive
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete { restaurants.remove(at: indexPath.row) }
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+
+        // Social Sharing Button
+        let shareAct = UITableViewRowAction(style: .normal, title: "Share", handler: { [weak self] act, indexPath in
+            guard self != nil else { return }
+            let defaultText = "Just checking in at " + self!.restaurants[indexPath.row].name!
+            if let imageToShare = UIImage(data: self!.restaurants[indexPath.row].image!) {
+                let actController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+                self!.present(actController, animated: true, completion: nil)
+            }
+        })
+        shareAct.backgroundColor = UIColor(red: 0.0, green: 147.0/255.0, blue: 227.0/255.0, alpha: 1.0)
+
+        // Delete Button
+        let deleteAct = UITableViewRowAction(style: .default, title: "Delete", handler: { [weak self] act, indexPath in
+            guard self != nil else { return }
+            guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return }
+            let context = appDel.persistentContainer.viewContext
+            let restToDelete = self!.fetchResultController.object(at: indexPath)
+            context.delete(restToDelete)
+            appDel.saveContext()
+        })
+
+        return [shareAct, deleteAct]
+    }
+
+    // MARK: - Core Data Methods  *********************************************************************************
+
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+            case .insert: if let newIndexPath = newIndexPath { tableView.insertRows(at: [newIndexPath], with: .fade) }
+            case .delete: if let indexPath = indexPath { tableView.deleteRows(at: [indexPath], with: .fade) }
+            case .update: if let indexPath = indexPath { tableView.reloadRows(at: [indexPath], with: .fade) }
+            default: tableView.reloadData()
+        }
+        if let fetchedObjects = controller.fetchedObjects { restaurants = fetchedObjects as! [RestaurantMO] }
+    }
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+}
+
+// MARK: - Search Controller Delegate Methods
+extension RestaurantTableVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            tableView.reloadData()
+        }
     }
 }
